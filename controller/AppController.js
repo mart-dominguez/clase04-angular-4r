@@ -1,27 +1,29 @@
 angular.module('app01').controller("AppController",
-	['$scope',function($scope){
-		$scope.tituloApp="Aplicacion ejemplo angular";
-		$scope.menuPush = [
-			{
-				opcion: "Gestion Tareas",
-				url : "#/tarea"
-			},
-			{
-				opcion: "Lista Tareas",
-				url : "#/lista"
-			}
-
-		];
+	['$scope','$location',function($scope,$location){
+		
+		$scope.tituloApp = "Aplicacion ejemplo angular";
+		
+		$scope.funcionXYZ = function(){
+					console.log(this);
+					$location.path("/lista");
+				};
 		$scope.menu = [
 			{
 				opcion: "Gestion Tareas",
-				url : "/tarea"
+				operacion : function(){
+					console.log(this);
+					$location.path("/tarea");
+				},
+				activo:true
 			},
 			{
-				opcion: "Lista Tareas",
-				url : "/lista"
+				opcion: "Listado de Tareas",
+				operacion: function(){
+					console.log(this);
+					$location.path("/lista");
+				},
+				activo:false
 			}
-
 		];
 
 		$scope.prioridades = [

@@ -20,25 +20,7 @@ angular.module('app01').controller("TareaController",
 			$scope.tareaActual = {
 				fechaFin:new Date()
 			};
-		}
-
-		$scope.agregarTarea = function(){
-			if($routeParams.tareaId>0){
-				tareaDao.actualizarTarea($scope.tareaActual);	
-			}else{
-				tareaDao.guardarTarea($scope.tareaActual);	
-			}
-			$scope.tareaActual={};
-		};
-
-		// funcion que guarda una tarea
-		$scope.nuevaTarea = function(){
-			console.log($scope.tareaActual);		
-			$scope.tareaActual = {
-				fechaFin:new Date()
-			};
-			console.log($scope.tareaActual);			
-		};
+		}		
 		
 	}]
 );
